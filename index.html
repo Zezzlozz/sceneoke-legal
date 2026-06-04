@@ -101,7 +101,7 @@ main{max-width:720px;margin:0 auto;padding:24px}
 
   <!-- IMPRESSUM -->
   <div class="section" id="sec-impressum">
-    <div class="warn" style="border-color:#1a5a3a;">
+    <div class="warn" style="background:#0d2e24;border-color:#1a5a3a;">
       <div class="warn-icon" style="color:#3bb885;">✓</div>
       <div class="warn-text" style="color:#3bb885;" id="imp-warn">
         <strong>Last verified: June 2026</strong>
@@ -153,7 +153,7 @@ const L = {
     privLabel: "PRIVACY POLICY", privUpdated: "Last updated: May 2025",
     termsLabel: "TERMS OF USE", termsUpdated: "Last updated: May 2025",
     impLabel: "LEGAL NOTICE (IMPRESSUM)",
-    impWarn: "<strong>Action required before publishing</strong>Replace all fields marked in orange with your real legal details. A physical address and phone number are required under German law (§5 DDG). A PO box is not sufficient.",
+    impWarn: "<strong>Last verified: June 2026</strong> — all provider details are up to date.",
     impTitleMain: "Information pursuant to §5 DDG",
     impHProvider: "Provider", impKName: "Full name", impKAddr: "Address",
     impKEmail: "Email", impKPhone: "Phone",
@@ -189,7 +189,7 @@ const L = {
     privLabel: "POLITIQUE DE CONFIDENTIALITÉ", privUpdated: "Dernière mise à jour : mai 2025",
     termsLabel: "CONDITIONS D'UTILISATION", termsUpdated: "Dernière mise à jour : mai 2025",
     impLabel: "MENTIONS LÉGALES (IMPRESSUM)",
-    impWarn: "<strong>Action requise avant publication</strong>Remplace tous les champs en orange par tes vraies coordonnées légales. Une adresse physique et un numéro de téléphone sont obligatoires en droit allemand (§5 DDG). Une boîte postale ne suffit pas.",
+    impWarn: "<strong>Dernière vérification : juin 2026</strong> — toutes les coordonnées sont à jour.",
     impTitleMain: "Mentions conformément au §5 DDG",
     impHProvider: "Prestataire", impKName: "Nom complet", impKAddr: "Adresse",
     impKEmail: "Email", impKPhone: "Téléphone",
@@ -225,7 +225,7 @@ const L = {
     privLabel: "POLÍTICA DE PRIVACIDAD", privUpdated: "Última actualización: mayo 2025",
     termsLabel: "TÉRMINOS DE USO", termsUpdated: "Última actualización: mayo 2025",
     impLabel: "AVISO LEGAL (IMPRESSUM)",
-    impWarn: "<strong>Acción requerida antes de publicar</strong>Reemplaza todos los campos en naranja con tus datos legales reales. Una dirección física y un número de teléfono son obligatorios bajo la ley alemana (§5 DDG). Un apartado postal no es suficiente.",
+    impWarn: "<strong>Última verificación: junio de 2026</strong> — todos los datos están actualizados.",
     impTitleMain: "Información conforme al §5 DDG",
     impHProvider: "Proveedor", impKName: "Nombre completo", impKAddr: "Dirección",
     impKEmail: "Email", impKPhone: "Teléfono",
@@ -261,7 +261,7 @@ const L = {
     privLabel: "POLÍTICA DE PRIVACIDADE", privUpdated: "Última atualização: maio 2025",
     termsLabel: "TERMOS DE USO", termsUpdated: "Última atualização: maio 2025",
     impLabel: "AVISO LEGAL (IMPRESSUM)",
-    impWarn: "<strong>Ação necessária antes de publicar</strong>Substitua todos os campos em laranja pelos seus dados legais reais. Um endereço físico e número de telefone são obrigatórios pela lei alemã (§5 DDG). Uma caixa postal não é suficiente.",
+    impWarn: "<strong>Última verificação: junho de 2026</strong> — todos os dados estão atualizados.",
     impTitleMain: "Informações conforme §5 DDG",
     impHProvider: "Fornecedor", impKName: "Nome completo", impKAddr: "Endereço",
     impKEmail: "Email", impKPhone: "Telefone",
@@ -297,7 +297,7 @@ const L = {
     privLabel: "DATENSCHUTZERKLÄRUNG", privUpdated: "Zuletzt aktualisiert: Mai 2025",
     termsLabel: "NUTZUNGSBEDINGUNGEN", termsUpdated: "Zuletzt aktualisiert: Mai 2025",
     impLabel: "IMPRESSUM",
-    impWarn: "<strong>Vor der Veröffentlichung ausfüllen</strong>Ersetze alle orange markierten Felder durch deine echten Angaben. Eine ladungsfähige Adresse und Telefonnummer sind nach deutschem Recht (§5 DDG) erforderlich. Ein Postfach reicht nicht aus.",
+    impWarn: "<strong>Zuletzt geprüft: Juni 2026</strong> — alle Angaben sind aktuell.",
     impTitleMain: "Angaben gemäß §5 Digitale-Dienste-Gesetz (DDG)",
     impHProvider: "Anbieter", impKName: "Name", impKAddr: "Anschrift",
     impKEmail: "E-Mail", impKPhone: "Telefon",
@@ -366,9 +366,9 @@ function render() {
   document.getElementById('imp-k-addr').textContent = d.impKAddr || en.impKAddr;
   document.getElementById('imp-k-email').textContent = d.impKEmail || en.impKEmail;
   document.getElementById('imp-k-phone').textContent = d.impKPhone || en.impKPhone;
-  document.getElementById('imp-v-name').innerHTML = (d.impVName || en.impVName) + ' <span class="badge badge-req">required</span>';
-  document.getElementById('imp-v-addr').innerHTML = (d.impVAddr || en.impVAddr).replace(/\n/g,'<br>') + ' <span class="badge badge-req">required</span>';
-  document.getElementById('imp-v-phone').innerHTML = (d.impVPhone || en.impVPhone) + ' <span class="badge badge-req">BGH 2025</span>';
+  document.getElementById('imp-v-name').innerHTML = (d.impVName || en.impVName) + ' <span class="badge badge-ok">set</span>';
+  document.getElementById('imp-v-addr').innerHTML = (d.impVAddr || en.impVAddr).replace(/\n/g,'<br>') + ' <span class="badge badge-ok">set</span>';
+  document.getElementById('imp-v-phone').innerHTML = (d.impVPhone || en.impVPhone) + ' <span class="badge badge-ok">set</span>';
   document.getElementById('imp-h-content').textContent = d.impHContent || en.impHContent;
   document.getElementById('imp-content-body').innerHTML = (d.impContentBody || en.impContentBody).replace(/\n/g,'<br>');
   document.getElementById('imp-h-dispute').textContent = d.impHDispute || en.impHDispute;
