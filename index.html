@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sceneoke — Legal</title>
+<style>
+:root{--bg:#0f0f14;--card:#16161f;--border:#222230;--accent:#5b5bd6;--text:#e8e8f4;--muted:#888;--dim:#444;--green:#3bb885;--amber:#d4a03a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:0 0 60px}
+header{border-bottom:1px solid var(--border);padding:28px 24px 20px;max-width:720px;margin:0 auto}
+.logo{font-size:22px;font-weight:600;letter-spacing:-.3px;margin-bottom:4px}
+.logo span{color:var(--accent)}
+.tagline{color:var(--muted);font-size:14px}
+.lang-bar{display:flex;gap:8px;flex-wrap:wrap;padding:20px 24px 0;max-width:720px;margin:0 auto}
+.lbtn{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all .15s}
+.lbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.lbtn:hover:not(.active){border-color:var(--accent);color:var(--text)}
+main{max-width:720px;margin:0 auto;padding:24px}
+.nav-tabs{display:flex;gap:2px;margin-bottom:24px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:4px;overflow-x:auto}
+.tab{flex:1;padding:9px 12px;border-radius:9px;border:none;background:transparent;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;white-space:nowrap;text-align:center}
+.tab.active{background:var(--accent);color:#fff}
+.tab:hover:not(.active){color:var(--text)}
+.section{display:none}
+.section.active{display:block}
+.warn{background:#1e1600;border:1px solid #3a2e00;border-radius:12px;padding:16px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start}
+.warn-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.warn-text{color:var(--amber);font-size:13px;line-height:1.7}
+.warn-text strong{display:block;margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.card-head{padding:16px 20px 12px;border-bottom:1px solid var(--border)}
+.card-title{font-size:11px;font-weight:600;letter-spacing:.8px;color:var(--dim);text-transform:uppercase;margin-bottom:6px}
+.card-main{font-size:18px;font-weight:600;color:var(--text)}
+.card-body{padding:16px 20px}
+.block{margin-bottom:16px}
+.block:last-child{margin-bottom:0}
+.block-heading{font-size:12px;font-weight:600;color:var(--accent);margin-bottom:6px;letter-spacing:.2px}
+.block-text{font-size:14px;color:var(--muted);line-height:1.75;white-space:pre-line}
+.block-text a{color:var(--accent);text-decoration:none}
+.block-text a:hover{text-decoration:underline}
+.imp-fields{background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:14px;margin-top:10px}
+.field{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:13px}
+.field:last-child{margin-bottom:0}
+.field-key{color:var(--dim);min-width:110px;flex-shrink:0;font-size:12px;padding-top:1px}
+.field-val{color:var(--text);line-height:1.5;word-break:break-word}
+.field-val.todo{color:var(--amber)}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;margin-left:6px}
+.badge-req{background:#1e1600;color:var(--amber);border:1px solid #3a2e00}
+.badge-ok{background:#0d2e24;color:var(--green);border:1px solid #1a5a3a}
+.footer{text-align:center;padding:40px 24px 0;color:var(--dim);font-size:12px;line-height:1.8}
+.footer a{color:var(--accent);text-decoration:none}
+.updated{display:flex;align-items:center;gap:6px;color:var(--dim);font-size:12px;padding:0 20px 16px}
+.dot-ok{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Scene<span>oke</span></div>
+  <div class="tagline" id="hdr-tagline">legal information · privacy policy · terms · impressum</div>
+</header>
+
+<div class="lang-bar">
+  <button class="lbtn active" onclick="setLang('en')">English</button>
+  <button class="lbtn" onclick="setLang('fr')">Français</button>
+  <button class="lbtn" onclick="setLang('es')">Español</button>
+  <button class="lbtn" onclick="setLang('pt')">Português</button>
+  <button class="lbtn" onclick="setLang('de')">Deutsch</button>
+</div>
+
+<main>
+  <div class="nav-tabs">
+    <button class="tab active" onclick="showTab('privacy')" id="tab-privacy">Privacy</button>
+    <button class="tab" onclick="showTab('terms')" id="tab-terms">Terms</button>
+    <button class="tab" onclick="showTab('impressum')" id="tab-impressum">Impressum</button>
+  </div>
+
+  <!-- PRIVACY -->
+  <div class="section active" id="sec-privacy">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title" id="priv-label">PRIVACY POLICY</div>
+        <div class="card-main" id="priv-app">Sceneoke</div>
+      </div>
+      <div class="updated"><div class="dot-ok"></div><span id="priv-updated">Last updated: May 2025</span></div>
+      <div class="card-body" id="priv-body"></div>
+    </div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="section" id="sec-terms">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title" id="terms-label">TERMS OF USE</div>
+        <div class="card-main" id="terms-app">Sceneoke</div>
+      </div>
+      <div class="updated"><div class="dot-ok"></div><span id="terms-updated">Last updated: May 2025</span></div>
+      <div class="card-body" id="terms-body"></div>
+    </div>
+  </div>
+
+  <!-- IMPRESSUM -->
+  <div class="section" id="sec-impressum">
+    <div class="warn">
+      <div class="warn-icon">⚠️</div>
+      <div class="warn-text" id="imp-warn">
+        <strong>Action required before publishing</strong>
+        Replace all fields marked in orange with your real legal details. A physical address and phone number are required under German law (§5 DDG). A PO box is not sufficient.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title" id="imp-label">LEGAL NOTICE (IMPRESSUM)</div>
+        <div class="card-main" id="imp-title-main">Angaben gemäß §5 DDG</div>
+      </div>
+      <div class="card-body">
+        <div class="block">
+          <div class="block-heading" id="imp-h-provider">Provider</div>
+          <div class="imp-fields">
+            <div class="field"><div class="field-key" id="imp-k-name">Full name</div><div class="field-val todo" id="imp-v-name">Florian Brüggemann <span class="badge badge-req">required</span></div></div>
+            <div class="field"><div class="field-key" id="imp-k-addr">Address</div><div class="field-val todo" id="imp-v-addr">Roter Weg 3a<br>26789 Leer<br>Germany <span class="badge badge-req">required</span></div></div>
+            <div class="field"><div class="field-key" id="imp-k-email">Email</div><div class="field-val"><a href="mailto:seriousbusinessgeo@gmail.com">seriousbusinessgeo@gmail.com</a> <span class="badge badge-ok">set</span></div></div>
+            <div class="field"><div class="field-key" id="imp-k-phone">Phone</div><div class="field-val todo" id="imp-v-phone">+491776014892 <span class="badge badge-req">required by BGH 2025</span></div></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="block-heading" id="imp-h-content">Content responsibility</div>
+          <div class="block-text" id="imp-content-body">Responsible pursuant to §18 Abs. 2 MStV:<br>Florian Brüggemann, address as above</div>
+        </div>
+        <div class="block">
+          <div class="block-heading" id="imp-h-dispute">EU Online Dispute Resolution</div>
+          <div class="block-text" id="imp-dispute-body">The European Commission provides a platform for online dispute resolution:<br><a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a><br><br>We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.</div>
+        </div>
+        <div class="block">
+          <div class="block-heading" id="imp-h-law">Legal basis</div>
+          <div class="block-text" id="imp-law-body">§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)<br>This Impressum is required by German law and must be accessible offline within the app and at this URL.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="footer">
+  <p id="footer-text">Sceneoke is a local-first party app with no accounts, no tracking, and no data collection.</p>
+  <p style="margin-top:8px"><a href="#" onclick="showTab('privacy');return false" id="footer-pp">Privacy Policy</a> · <a href="#" onclick="showTab('terms');return false" id="footer-tu">Terms of Use</a> · <a href="#" onclick="showTab('impressum');return false">Impressum</a></p>
+</div>
+
+<script>
+const L = {
+  en: {
+    tagline: "legal information · privacy policy · terms · impressum",
+    tabPrivacy: "Privacy", tabTerms: "Terms", tabImpressum: "Impressum",
+    privLabel: "PRIVACY POLICY", privUpdated: "Last updated: May 2025",
+    termsLabel: "TERMS OF USE", termsUpdated: "Last updated: May 2025",
+    impLabel: "LEGAL NOTICE (IMPRESSUM)",
+    impWarn: "<strong>Action required before publishing</strong>Replace all fields marked in orange with your real legal details. A physical address and phone number are required under German law (§5 DDG). A PO box is not sufficient.",
+    impTitleMain: "Information pursuant to §5 DDG",
+    impHProvider: "Provider", impKName: "Full name", impKAddr: "Address",
+    impKEmail: "Email", impKPhone: "Phone",
+    impVName: "Florian Brüggemann", impVAddr: "Roter Weg 3a\n26789 Leer\nGermany",
+    impVPhone: "+491776014892",
+    impHContent: "Content responsibility",
+    impContentBody: "Responsible pursuant to §18 Abs. 2 MStV:\nFlorian Brüggemann, address as above",
+    impHDispute: "EU Online Dispute Resolution",
+    impDisputeBody: "The European Commission provides a platform for online dispute resolution:\nhttps://ec.europa.eu/consumers/odr\n\nWe are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.",
+    impHLaw: "Legal basis",
+    impLawBody: "§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)\nThis Impressum is required by German law and must be accessible offline within the app and at this URL.",
+    footerText: "Sceneoke is a local-first party app with no accounts, no tracking, and no data collection.",
+    footerPP: "Privacy Policy", footerTU: "Terms of Use",
+    privacy: [
+      { h: "What data we collect", b: "This app stores all data locally on your device only. We do not collect, transmit, or store any personal data on external servers. No account, no login, no tracking." },
+      { h: "Payments", b: "Purchases are processed by Apple App Store or Google Play Store. Their privacy policies govern those transactions. We receive only a purchase confirmation — not your payment details." },
+      { h: "Video files you load", b: "Files you load from your device are read locally only. They are never uploaded, transmitted, or accessible to us." },
+      { h: "No analytics or advertising", b: "This app contains no analytics, tracking pixels, advertising SDKs, or any third-party data collection of any kind." },
+      { h: "Your rights (GDPR)", b: "You have the right to access, correct, delete, or port any personal data we hold. Since we hold none, there is nothing to access or delete.\n\nFor any questions: seriousbusinessgeo@gmail.com" },
+      { h: "Policy updates", b: "If this policy changes, the updated version will be available in the app and at this URL. Continued use constitutes acceptance." },
+    ],
+    terms: [
+      { h: "Permitted use", b: "This app is licensed for personal, non-commercial entertainment only. Commercial use without written permission is prohibited." },
+      { h: "Scene packs", b: "Purchased scene packs are licensed for personal use on your own devices. You may not redistribute, resell, or share them." },
+      { h: "Your own video files", b: "You are solely responsible for any video files you load into the app. You must have the legal right to use any content you load. We have no access to or liability for user-loaded content." },
+      { h: "Disclaimer", b: "The app is provided as-is without warranty of any kind. We are not liable for damages arising from its use, to the extent permitted by law." },
+      { h: "Governing law", b: "These terms are governed by the laws of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG)." },
+    ],
+  },
+  fr: {
+    tagline: "informations légales · confidentialité · conditions · mentions légales",
+    tabPrivacy: "Confidentialité", tabTerms: "Conditions", tabImpressum: "Mentions légales",
+    privLabel: "POLITIQUE DE CONFIDENTIALITÉ", privUpdated: "Dernière mise à jour : mai 2025",
+    termsLabel: "CONDITIONS D'UTILISATION", termsUpdated: "Dernière mise à jour : mai 2025",
+    impLabel: "MENTIONS LÉGALES (IMPRESSUM)",
+    impWarn: "<strong>Action requise avant publication</strong>Remplace tous les champs en orange par tes vraies coordonnées légales. Une adresse physique et un numéro de téléphone sont obligatoires en droit allemand (§5 DDG). Une boîte postale ne suffit pas.",
+    impTitleMain: "Mentions conformément au §5 DDG",
+    impHProvider: "Prestataire", impKName: "Nom complet", impKAddr: "Adresse",
+    impKEmail: "Email", impKPhone: "Téléphone",
+    impVName: "Florian Brüggemann", impVAddr: "Roter Weg 3a\n26789 Leer\nAllemagne",
+    impVPhone: "+491776014892",
+    impHContent: "Responsable du contenu",
+    impContentBody: "Responsable conformément au §18 Abs. 2 MStV :\nFlorian Brüggemann, adresse ci-dessus",
+    impHDispute: "Résolution des litiges en ligne",
+    impDisputeBody: "La Commission européenne met à disposition une plateforme de résolution des litiges en ligne :\nhttps://ec.europa.eu/consumers/odr\n\nNous ne participons pas à des procédures de règlement des litiges devant une commission de conciliation.",
+    impHLaw: "Base légale",
+    impLawBody: "§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)\nCet Impressum est requis par le droit allemand et doit être accessible hors ligne dans l'app et à cette URL.",
+    footerText: "Sceneoke est une app de fête locale sans compte, sans traçage et sans collecte de données.",
+    footerPP: "Politique de confidentialité", footerTU: "Conditions d'utilisation",
+    privacy: [
+      { h: "Données collectées", b: "Cette app stocke toutes les données uniquement en local sur ton appareil. Nous ne collectons, ne transmettons ni ne stockons aucune donnée personnelle sur des serveurs externes. Pas de compte, pas de connexion, pas de traçage." },
+      { h: "Paiements", b: "Les achats sont traités par l'Apple App Store ou Google Play Store. Leurs politiques de confidentialité s'appliquent à ces transactions. Nous recevons uniquement une confirmation d'achat — pas tes données bancaires." },
+      { h: "Fichiers vidéo chargés", b: "Les fichiers que tu charges depuis ton appareil sont lus uniquement en local. Ils ne sont jamais téléversés, transmis ou accessibles par nous." },
+      { h: "Pas d'analytique ni de publicité", b: "Cette app ne contient aucun outil d'analyse, pixel de suivi, SDK publicitaire ni collecte de données tierce." },
+      { h: "Tes droits (RGPD)", b: "Tu as le droit d'accéder, de corriger, de supprimer ou de porter tes données personnelles. Étant donné que nous n'en détenons aucune, il n'y a rien à consulter ou effacer.\n\nPour toute question : seriousbusinessgeo@gmail.com" },
+      { h: "Mises à jour", b: "En cas de modification de cette politique, la version actualisée sera disponible dans l'app et à cette URL." },
+    ],
+    terms: [
+      { h: "Usage autorisé", b: "Cette app est licenciée pour un usage personnel et non commercial uniquement. Toute utilisation commerciale sans autorisation écrite est interdite." },
+      { h: "Packs de scènes", b: "Les packs achetés sont sous licence pour usage personnel sur tes propres appareils. Toute redistribution, revente ou mise à disposition est interdite." },
+      { h: "Fichiers vidéo personnels", b: "Tu es seul responsable des fichiers vidéo que tu charges dans l'app. Tu dois disposer des droits nécessaires pour utiliser tout contenu chargé. Nous n'avons aucun accès à ces contenus et déclinons toute responsabilité à leur égard." },
+      { h: "Limitation de responsabilité", b: "L'app est fournie en l'état, sans garantie d'aucune sorte, dans les limites autorisées par la loi." },
+      { h: "Droit applicable", b: "Ces conditions sont régies par le droit allemand, à l'exclusion de la Convention de Vienne sur la vente internationale de marchandises (CVIM)." },
+    ],
+  },
+  es: {
+    tagline: "información legal · privacidad · condiciones · aviso legal",
+    tabPrivacy: "Privacidad", tabTerms: "Condiciones", tabImpressum: "Aviso legal",
+    privLabel: "POLÍTICA DE PRIVACIDAD", privUpdated: "Última actualización: mayo 2025",
+    termsLabel: "TÉRMINOS DE USO", termsUpdated: "Última actualización: mayo 2025",
+    impLabel: "AVISO LEGAL (IMPRESSUM)",
+    impWarn: "<strong>Acción requerida antes de publicar</strong>Reemplaza todos los campos en naranja con tus datos legales reales. Una dirección física y un número de teléfono son obligatorios bajo la ley alemana (§5 DDG). Un apartado postal no es suficiente.",
+    impTitleMain: "Información conforme al §5 DDG",
+    impHProvider: "Proveedor", impKName: "Nombre completo", impKAddr: "Dirección",
+    impKEmail: "Email", impKPhone: "Teléfono",
+    impVName: "Florian Brüggemann", impVAddr: "Roter Weg 3a\n26789 Leer\nAlemania",
+    impVPhone: "+491776014892",
+    impHContent: "Responsable del contenido",
+    impContentBody: "Responsable conforme al §18 Abs. 2 MStV:\nFlorian Brüggemann, dirección arriba indicada",
+    impHDispute: "Resolución de litigios en línea",
+    impDisputeBody: "La Comisión Europea ofrece una plataforma para la resolución de litigios en línea:\nhttps://ec.europa.eu/consumers/odr\n\nNo participamos en procedimientos de resolución de litigios ante juntas de arbitraje de consumo.",
+    impHLaw: "Base legal",
+    impLawBody: "§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)\nEste aviso legal es exigido por la ley alemana y debe ser accesible sin conexión en la app y en esta URL.",
+    footerText: "Sceneoke es una app de fiesta local sin cuentas, sin rastreo y sin recopilación de datos.",
+    footerPP: "Política de privacidad", footerTU: "Términos de uso",
+    privacy: [
+      { h: "Datos que recopilamos", b: "Esta app almacena todos los datos únicamente de forma local en tu dispositivo. No recopilamos, transmitimos ni almacenamos ningún dato personal en servidores externos. Sin cuenta, sin inicio de sesión, sin rastreo." },
+      { h: "Pagos", b: "Las compras son procesadas por Apple App Store o Google Play Store. Sus políticas de privacidad rigen esas transacciones. Solo recibimos una confirmación de compra — no tus datos de pago." },
+      { h: "Archivos de vídeo", b: "Los archivos que cargas desde tu dispositivo se leen únicamente en local. Nunca se suben, transmiten ni son accesibles por nosotros." },
+      { h: "Sin análisis ni publicidad", b: "Esta app no contiene herramientas de análisis, píxeles de seguimiento, SDKs publicitarios ni recopilación de datos de terceros." },
+      { h: "Tus derechos (RGPD)", b: "Tienes derecho a acceder, rectificar, suprimir o portar tus datos personales. Como no almacenamos ninguno, no hay nada que consultar ni eliminar.\n\nPara cualquier consulta: seriousbusinessgeo@gmail.com" },
+      { h: "Actualizaciones", b: "Si esta política cambia, la versión actualizada estará disponible en la app y en esta URL." },
+    ],
+    terms: [
+      { h: "Uso permitido", b: "Esta app está licenciada para uso personal y no comercial únicamente. Cualquier uso comercial sin autorización escrita está prohibido." },
+      { h: "Packs de escenas", b: "Los packs comprados están licenciados para uso personal en tus propios dispositivos. No puedes redistribuirlos, revenderlos ni compartirlos." },
+      { h: "Archivos de vídeo propios", b: "Eres el único responsable de los archivos de vídeo que cargues en la app. Debes tener el derecho legal de usar cualquier contenido cargado. No tenemos acceso a ese contenido ni responsabilidad sobre él." },
+      { h: "Limitación de responsabilidad", b: "La app se ofrece tal cual, sin garantía de ningún tipo, en la medida permitida por la ley." },
+      { h: "Ley aplicable", b: "Estos términos se rigen por la legislación alemana, excluyendo la Convención de Viena sobre Contratos de Compraventa Internacional de Mercaderías (CISG)." },
+    ],
+  },
+  pt: {
+    tagline: "informações legais · privacidade · termos · aviso legal",
+    tabPrivacy: "Privacidade", tabTerms: "Termos", tabImpressum: "Aviso legal",
+    privLabel: "POLÍTICA DE PRIVACIDADE", privUpdated: "Última atualização: maio 2025",
+    termsLabel: "TERMOS DE USO", termsUpdated: "Última atualização: maio 2025",
+    impLabel: "AVISO LEGAL (IMPRESSUM)",
+    impWarn: "<strong>Ação necessária antes de publicar</strong>Substitua todos os campos em laranja pelos seus dados legais reais. Um endereço físico e número de telefone são obrigatórios pela lei alemã (§5 DDG). Uma caixa postal não é suficiente.",
+    impTitleMain: "Informações conforme §5 DDG",
+    impHProvider: "Fornecedor", impKName: "Nome completo", impKAddr: "Endereço",
+    impKEmail: "Email", impKPhone: "Telefone",
+    impVName: "Florian Brüggemann", impVAddr: "Roter Weg 3a\n26789 Leer\nAlemanha",
+    impVPhone: "+491776014892",
+    impHContent: "Responsável pelo conteúdo",
+    impContentBody: "Responsável conforme §18 Abs. 2 MStV:\nFlorian Brüggemann, endereço acima",
+    impHDispute: "Resolução de litígios online",
+    impDisputeBody: "A Comissão Europeia disponibiliza uma plataforma para resolução de litígios online:\nhttps://ec.europa.eu/consumers/odr\n\nNão participamos de procedimentos de resolução de litígios perante comissões de arbitragem de consumo.",
+    impHLaw: "Base legal",
+    impLawBody: "§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)\nEste aviso legal é exigido pela lei alemã e deve ser acessível offline no app e nesta URL.",
+    footerText: "Sceneoke é um app de festa local sem contas, sem rastreamento e sem coleta de dados.",
+    footerPP: "Política de privacidade", footerTU: "Termos de uso",
+    privacy: [
+      { h: "Dados que coletamos", b: "Este app armazena todos os dados localmente no seu dispositivo. Não coletamos, transmitimos nem armazenamos nenhum dado pessoal em servidores externos. Sem conta, sem login, sem rastreamento." },
+      { h: "Pagamentos", b: "As compras são processadas pela Apple App Store ou Google Play Store. As políticas de privacidade deles regem essas transações. Recebemos apenas uma confirmação de compra — não seus dados de pagamento." },
+      { h: "Arquivos de vídeo", b: "Os arquivos que você carrega do seu dispositivo são lidos apenas localmente. Nunca são enviados, transmitidos ou acessíveis por nós." },
+      { h: "Sem análise nem publicidade", b: "Este app não contém ferramentas de análise, pixels de rastreamento, SDKs publicitários nem coleta de dados de terceiros." },
+      { h: "Seus direitos (RGPD)", b: "Você tem direito de acessar, corrigir, excluir ou portar seus dados pessoais. Como não armazenamos nenhum, não há nada a consultar ou excluir.\n\nPara dúvidas: seriousbusinessgeo@gmail.com" },
+      { h: "Atualizações", b: "Se esta política mudar, a versão atualizada estará disponível no app e nesta URL." },
+    ],
+    terms: [
+      { h: "Uso permitido", b: "Este app é licenciado para uso pessoal e não comercial apenas. Qualquer uso comercial sem autorização escrita é proibido." },
+      { h: "Packs de cenas", b: "Os packs comprados são licenciados para uso pessoal nos seus dispositivos. Não podem ser redistribuídos, revendidos ou compartilhados." },
+      { h: "Arquivos de vídeo próprios", b: "Você é o único responsável pelos arquivos de vídeo que carregar no app. Você deve ter o direito legal de usar qualquer conteúdo carregado. Não temos acesso a esse conteúdo nem responsabilidade sobre ele." },
+      { h: "Limitação de responsabilidade", b: "O app é fornecido no estado em que se encontra, sem garantia de qualquer tipo, na medida permitida por lei." },
+      { h: "Lei aplicável", b: "Estes termos são regidos pela legislação alemã, excluindo a Convenção das Nações Unidas sobre Contratos de Compra e Venda Internacional de Mercadorias (CISG)." },
+    ],
+  },
+  de: {
+    tagline: "Rechtliche Informationen · Datenschutz · Nutzungsbedingungen · Impressum",
+    tabPrivacy: "Datenschutz", tabTerms: "Nutzungsbedingungen", tabImpressum: "Impressum",
+    privLabel: "DATENSCHUTZERKLÄRUNG", privUpdated: "Zuletzt aktualisiert: Mai 2025",
+    termsLabel: "NUTZUNGSBEDINGUNGEN", termsUpdated: "Zuletzt aktualisiert: Mai 2025",
+    impLabel: "IMPRESSUM",
+    impWarn: "<strong>Vor der Veröffentlichung ausfüllen</strong>Ersetze alle orange markierten Felder durch deine echten Angaben. Eine ladungsfähige Adresse und Telefonnummer sind nach deutschem Recht (§5 DDG) erforderlich. Ein Postfach reicht nicht aus.",
+    impTitleMain: "Angaben gemäß §5 Digitale-Dienste-Gesetz (DDG)",
+    impHProvider: "Anbieter", impKName: "Name", impKAddr: "Anschrift",
+    impKEmail: "E-Mail", impKPhone: "Telefon",
+    impVName: "Florian Brüggemann", impVAddr: "Roter Weg 3a\n26789 Leer\nDeutschland",
+    impVPhone: "+491776014892",
+    impHContent: "Inhaltlich Verantwortlicher",
+    impContentBody: "Verantwortlich gemäß §18 Abs. 2 MStV:\nFlorian Brüggemann, Adresse wie oben",
+    impHDispute: "Streitschlichtung",
+    impDisputeBody: "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:\nhttps://ec.europa.eu/consumers/odr\n\nWir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+    impHLaw: "Rechtsgrundlage",
+    impLawBody: "§5 Digitale-Dienste-Gesetz (DDG) · §18 Abs. 2 Medienstaatsvertrag (MStV)\nDieses Impressum ist gesetzlich vorgeschrieben und muss sowohl offline in der App als auch unter dieser URL erreichbar sein.",
+    footerText: "Sceneoke ist eine lokale Party-App — kein Konto, kein Tracking, keine Datenerhebung.",
+    footerPP: "Datenschutzerklärung", footerTU: "Nutzungsbedingungen",
+    privacy: [
+      { h: "Welche Daten wir verarbeiten", b: "Diese App speichert alle Daten ausschließlich lokal auf deinem Gerät. Wir erheben, übertragen oder speichern keine personenbezogenen Daten auf externen Servern. Kein Konto, keine Anmeldung, kein Tracking." },
+      { h: "Zahlungsabwicklung", b: "Käufe werden vom Apple App Store bzw. Google Play Store abgewickelt. Deren Datenschutzbestimmungen gelten für diese Transaktionen. Wir erhalten lediglich eine Kaufbestätigung — keine Zahlungsdaten." },
+      { h: "Von dir geladene Videodateien", b: "Videodateien, die du von deinem Gerät lädst, werden ausschließlich lokal gelesen. Sie werden weder hochgeladen noch übertragen und sind für uns zu keinem Zeitpunkt zugänglich." },
+      { h: "Keine Analyse- oder Werbedienste", b: "Diese App enthält keinerlei Analyse-Tools, Tracking-Pixel, Werbe-SDKs oder sonstige Drittanbieter-Datenerhebung." },
+      { h: "Deine Rechte nach DSGVO (Art. 15–20)", b: "Du hast das Recht auf Auskunft, Berichtigung, Löschung und Datenübertragbarkeit deiner personenbezogenen Daten gemäß Art. 15–20 DSGVO. Da wir keine personenbezogenen Daten speichern, gibt es nichts auszukunften oder zu löschen.\n\nBei Fragen: seriousbusinessgeo@gmail.com\n\nVerantwortlicher im Sinne der DSGVO ist die im Impressum genannte Person." },
+      { h: "Änderungen dieser Erklärung", b: "Bei Änderungen wird die aktualisierte Fassung in der App und unter dieser URL veröffentlicht." },
+    ],
+    terms: [
+      { h: "Erlaubte Nutzung", b: "Diese App ist ausschließlich für die private, nicht-kommerzielle Nutzung lizenziert. Eine gewerbliche Nutzung ohne ausdrückliche schriftliche Genehmigung ist untersagt." },
+      { h: "Szenen-Packs", b: "Gekaufte Szenen-Packs sind für die persönliche Nutzung auf deinen eigenen Geräten lizenziert. Eine Weitergabe, ein Weiterverkauf oder eine sonstige Verbreitung ist nicht gestattet." },
+      { h: "Selbst geladene Videodateien", b: "Du bist allein verantwortlich für die Videodateien, die du in die App lädst. Du musst über die erforderlichen Nutzungsrechte für die geladenen Inhalte verfügen. Wir haben keinen Zugriff auf diese Inhalte und übernehmen dafür keine Haftung." },
+      { h: "Haftungsausschluss", b: "Die App wird ohne Mängelgewähr bereitgestellt. Eine Haftung für Schäden, die durch die Nutzung entstehen, ist ausgeschlossen, soweit gesetzlich zulässig." },
+      { h: "Anzuwendendes Recht", b: "Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts (Wiener Kaufrechtsübereinkommen, CISG)." },
+    ],
+  },
+};
+
+let lang = 'en';
+let activeTab = 'privacy';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lbtn').forEach((b,i) => b.classList.toggle('active', ['en','fr','es','pt','de'][i] === l));
+  render();
+}
+
+function showTab(tab) {
+  activeTab = tab;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + tab).classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+function render() {
+  const d = L[lang] || L.en;
+  const en = L.en;
+
+  document.getElementById('hdr-tagline').textContent = d.tagline || en.tagline;
+  document.getElementById('tab-privacy').textContent = d.tabPrivacy || en.tabPrivacy;
+  document.getElementById('tab-terms').textContent = d.tabTerms || en.tabTerms;
+  document.getElementById('tab-impressum').textContent = d.tabImpressum || en.tabImpressum;
+  document.getElementById('priv-label').textContent = d.privLabel || en.privLabel;
+  document.getElementById('priv-updated').textContent = d.privUpdated || en.privUpdated;
+  document.getElementById('terms-label').textContent = d.termsLabel || en.termsLabel;
+  document.getElementById('terms-updated').textContent = d.termsUpdated || en.termsUpdated;
+  document.getElementById('imp-label').textContent = d.impLabel || en.impLabel;
+  document.getElementById('imp-warn').innerHTML = d.impWarn || en.impWarn;
+  document.getElementById('imp-title-main').textContent = d.impTitleMain || en.impTitleMain;
+  document.getElementById('imp-h-provider').textContent = d.impHProvider || en.impHProvider;
+  document.getElementById('imp-k-name').textContent = d.impKName || en.impKName;
+  document.getElementById('imp-k-addr').textContent = d.impKAddr || en.impKAddr;
+  document.getElementById('imp-k-email').textContent = d.impKEmail || en.impKEmail;
+  document.getElementById('imp-k-phone').textContent = d.impKPhone || en.impKPhone;
+  document.getElementById('imp-v-name').innerHTML = (d.impVName || en.impVName) + ' <span class="badge badge-req">required</span>';
+  document.getElementById('imp-v-addr').innerHTML = (d.impVAddr || en.impVAddr).replace(/\n/g,'<br>') + ' <span class="badge badge-req">required</span>';
+  document.getElementById('imp-v-phone').innerHTML = (d.impVPhone || en.impVPhone) + ' <span class="badge badge-req">BGH 2025</span>';
+  document.getElementById('imp-h-content').textContent = d.impHContent || en.impHContent;
+  document.getElementById('imp-content-body').innerHTML = (d.impContentBody || en.impContentBody).replace(/\n/g,'<br>');
+  document.getElementById('imp-h-dispute').textContent = d.impHDispute || en.impHDispute;
+  document.getElementById('imp-dispute-body').innerHTML = (d.impDisputeBody || en.impDisputeBody)
+    .replace(/\n/g,'<br>')
+    .replace('https://ec.europa.eu/consumers/odr','<a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>');
+  document.getElementById('imp-h-law').textContent = d.impHLaw || en.impHLaw;
+  document.getElementById('imp-law-body').innerHTML = (d.impLawBody || en.impLawBody).replace(/\n/g,'<br>');
+  document.getElementById('footer-text').textContent = d.footerText || en.footerText;
+  document.getElementById('footer-pp').textContent = d.footerPP || en.footerPP;
+  document.getElementById('footer-tu').textContent = d.footerTU || en.footerTU;
+
+  // Privacy body
+  const privBody = d.privacy || en.privacy;
+  document.getElementById('priv-body').innerHTML = privBody.map(b =>
+    `<div class="block"><div class="block-heading">${b.h}</div><div class="block-text">${b.b.replace(/\n/g,'<br>')}</div></div>`
+  ).join('');
+
+  // Terms body
+  const termsBody = d.terms || en.terms;
+  document.getElementById('terms-body').innerHTML = termsBody.map(b =>
+    `<div class="block"><div class="block-heading">${b.h}</div><div class="block-text">${b.b.replace(/\n/g,'<br>')}</div></div>`
+  ).join('');
+}
+
+// Auto-detect language
+const nav = navigator.language || 'en';
+if (nav.startsWith('fr')) lang = 'fr';
+else if (nav.startsWith('es')) lang = 'es';
+else if (nav.startsWith('pt')) lang = 'pt';
+else if (nav.startsWith('de')) lang = 'de';
+document.querySelectorAll('.lbtn').forEach((b,i) => b.classList.toggle('active', ['en','fr','es','pt','de'][i] === lang));
+render();
+</script>
+</body>
+</html>
